@@ -1,0 +1,4 @@
+<% @opinions.each do |opinion| %>
+<%= link_to "#{opinion.title}", opinion_path(opinion) %>
+<% end %>
+
