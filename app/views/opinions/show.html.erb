@@ -8,10 +8,10 @@
 		<%= f.label :body %>
 		<%= f.text_field :body %>
 
-		<%= f.submit 'Post' %>
-
 		<%= f.hidden_field :user_id, :value => current_user.id %>
 		<%= f.hidden_field :opinion_id, :value => @opinion.id %>
+
+		<%= f.submit 'Post' %>
 
 	<% end %>
 	<% else %>
@@ -23,6 +23,7 @@
 	<%= comment.user.user_name %>
 	<%= comment.body  %>
 	<% end %>
-<% else %>
-<p>no comment</p>
 <% end %>
+
+<%= link_to("Upvote", vote_opinion_path(@opinion, 'true'), method: 'post')%>  
+<%= link_to("Downvote", vote_opinion_path(@opinion, 'false'), method: 'post')%>

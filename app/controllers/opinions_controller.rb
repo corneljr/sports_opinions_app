@@ -18,6 +18,13 @@ class OpinionsController < ApplicationController
 		@comment = Comment.new
 	end
 
+	def vote
+		if params[:polarity] == true || params[:polarity] = false
+			Vote.create(user_id: current_user.id, polarity: params[:polarity], article_id: params[:id])
+		end
+		redirect_to opinion_path(params[:id])
+	end
+
 	private
 
 	def opinion_params

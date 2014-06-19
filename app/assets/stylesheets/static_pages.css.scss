@@ -1,3 +1,55 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+	height: 100%;
+}
+
+.static {
+  background: 
+  /* top, transparent red, faked with gradient */ 
+  linear-gradient(
+    rgba(0, 0, 0, 0.75), 
+    rgba(0, 0, 0, 0.75)
+  ),
+  /* bottom, image */
+  url(home.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.signup {
+	font: inherit;
+	border: 0px;
+	padding: 16px;
+	border-radius: 10px;
+}
+ 
+.home-title {
+	color: white;
+	margin-bottom: 20px;
+}
+
+.home-container {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	margin-top: -10rem;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+
+}
+
+footer p a {
+	color: rgba(255,255,255,0.5);
+	text-decoration: none;
+	padding: 10px;
+}
+

@@ -1,0 +1,28 @@
+<h1><%= @article.title %></h1>
+<h4><%= @article.user.user_name %></h4>
+<p><%= @article.body %></p>
+
+<% if user_signed_in? %>
+	<%= form_for @comment do |f| %>
+
+		<%= f.label :body %>
+		<%= f.text_field :body %>
+
+		<%= f.hidden_field :user_id, :value => current_user.id %>
+		<%= f.hidden_field :article_id, :value => @article.id %>
+
+		<%= f.submit "Post" %>
+	<% end %>
+<% else %>
+	<p>You must <%= link_to 'sign in', new_user_registration_path %> to comment </p>
+<% end %>
+
+<% unless @comments.empty? %>
+	<% @comments.each do |comment| %>
+		<%= comment.user.user_name %>
+		<%= comment.body %>
+	<% end %>
+<% end %>
+
+<%= link_to("Upvote", vote_article_path(@article, 'true'), method: 'post')%>  
+<%= link_to("Downvote", vote_article_path(@article, 'false'), method: 'post')  %>

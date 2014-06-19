@@ -1,2 +1,9 @@
-<h1>Home Page</h1>
-<%= link_to 'Sign up!', new_user_registration_path %>
+<div class='home-container'>
+	<h1 class='home-title'>Sports Opinions</h1>
+	<h2 class='home-title'>Every sports fan has an opinion. Share yours today.</h2>
+
+	<%= link_to 'Sign up', new_user_registration_path, class: 'signup btn btn-primary btn-large' %>
+
+			
+</div>
+<%= render 'layouts/footer' %>

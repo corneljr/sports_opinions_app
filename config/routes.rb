@@ -2,9 +2,20 @@ OpinionsProject::Application.routes.draw do
 
   devise_for :users
   root 'static_pages#index'
+  get '/about' => 'static_pages#about'
 
-  resources :opinions
-  resources :articles
+  resources :opinions do  
+    member do  
+      post 'vote/:polarity' => 'opinions#vote', as: :vote
+    end
+  end
+
+  resources :articles do
+    member do 
+      post 'vote/:polarity' => 'articles#vote', as: :vote
+    end
+  end
+
   resources :comments
 
   # The priority is based upon order of creation: first created -> highest priority.

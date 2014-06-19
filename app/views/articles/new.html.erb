@@ -1,0 +1,17 @@
+<h2>Create a new article</h2>
+
+<%= form_for @article do |f| %>
+	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+
+	<%= f.submit 'Post' %>
+
+<% end %>
+
+
