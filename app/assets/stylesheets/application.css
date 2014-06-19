@@ -11,3 +11,30 @@
  *= require_self
  *= require_tree .
  */
+
+	.navbar {
+		background-color: #2ecc71;
+		
+
+	}
+
+	.navbar h1 {
+
+		font-weight: 100;
+	}
+
+
+	.nav-link {
+		position: relative;
+		padding: 10px;
+		top: 30px;
+		font-size: 1.2em;
+		font-weight: 100;
+		letter-spacing: 1px;
+	}
+
+
+	.navbar a {
+		color: white;
+
+	}
