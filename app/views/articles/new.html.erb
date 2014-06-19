@@ -1,17 +1,21 @@
-<h2>Create a new article</h2>
+<% unless @article.errors.empty? %>
+	<% @article.errors.each do |error| %>
+	<%= error.message %>
+	<% end %>
+<% end %>
 
-<%= form_for @article do |f| %>
+<div class='new-article-container'>
+<%= form_for @article, {:class => 'new-article-form'} do |f| %>
 	
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<%= f.text_field :title, placeholder: "Title here", class: 'new-article-text text-field' %>
 
-	<%= f.label :body %>
-	<%= f.text_area :body %>
+	<%= f.text_area :body, placeholder: "Write post here", class: 'new-article-text text-area' %>
 
 	<%= f.hidden_field :user_id, :value => current_user.id %>
 
-	<%= f.submit 'Post' %>
+	<%= f.submit 'Post', class: 'btn new-article-button btn-lg' %>
 
 <% end %>
+</div>
 
 

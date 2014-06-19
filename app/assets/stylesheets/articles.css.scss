@@ -1,3 +1,58 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-article-form {
+	border: 0px;
+
+}
+
+.new-article-text {
+	color: #bdc3c7;
+	border: 0px;
+	resize:none;
+}
+
+
+.text-area:focus {
+	outline-width: 0;
+	color: black;
+}
+
+.new-article-button {
+	border: 0px;
+}
+
+.new-article-container {
+	width: 80%;
+	margin-top: 30px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.text-area {
+	width: 100%;
+	height: 450px;
+	margin-top: 20px;
+	font-size: 1.3em;
+}
+
+.text-field:focus {
+	outline-width: 0;
+	color: black;
+}
+
+.text-field {
+	font-size: 3em;
+}
+
+.new-article-button {
+	color: white;
+	background-color: #2ecc71;
+	position: fixed;
+	right: 0;
+	bottom: 1;
+	margin: 20px;
+}
