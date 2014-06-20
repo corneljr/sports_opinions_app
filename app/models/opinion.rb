@@ -18,4 +18,9 @@ class Opinion < ActiveRecord::Base
 		end
 		counter
 	end
+
+	def self.most_votes
+		self.all.sort_by {|vote| vote.downvote_count - vote.upvote_count} 
+	end
+
 end

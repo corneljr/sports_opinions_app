@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
 	def index
-		@opinions = Opinion.all
+		@opinions = Opinion.most_votes
 	end
 
 	def new
