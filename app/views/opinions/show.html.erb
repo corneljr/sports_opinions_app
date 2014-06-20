@@ -32,7 +32,6 @@
 	<%= link_to("Downvote", vote_opinion_path(@opinion, 'false'), method: 'post')  %>
 	</button>
 <% else %>
-	<% binding.pry %>
 	<button class='btn btn-large'>
 		<%= link_to("Upvote", vote_opinion_path(@opinion, 'true'), method: 'post')%>  
 	</button>

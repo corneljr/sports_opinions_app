@@ -1,5 +1,6 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Start your 'app name' experience.</h2>
 
+<div class="center_div">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -19,3 +20,12 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+
+<style type="text/css">
+    .center_div {
+      width: 50%;
+    }
+
+</style>
