@@ -19,7 +19,7 @@
 	}
 	
 	.navbar {
-		background-color: #2ecc71;
+		background-color: transparent;
 	}
 
 	.navbar h1 {
@@ -44,4 +44,5 @@
 
 	.navbar a:hover {
 		text-decoration: none;
+		color: #2ecc71;
 	}

@@ -13,13 +13,77 @@
 }
 
 .opinions-titles {
+	font-size: 3rem;
+	text-decoration: none;
+	color: white;
+	border-top: 5px white;
+	font-weight: bold;
+}
+
+.opinions-titles:hover {
+	text-decoration: none;
+	color: #2ecc71;
+}
+
+.opinions-comments {
 	font-size: 2rem;
+	text-decoration: none;
+	color: white;
 }
 
-.well {
-	padding: 5px;
+.cover-image {
+	-webkit-webkit-background-size: cover;
+	-moz-webkit-background-size: cover;
+	-ms-webkit-background-size: cover;
+	-o-webkit-background-size: cover;
+	background-size: cover;
+
+	background: linear-gradient(
+								rgba(0, 0, 0, 0.5), 
+								rgba(0, 0, 0, 0.5)
+								), 
+							url('http://cbsboston.files.wordpress.com/2012/04/72465834.jpg') no-repeat center center fixed;
+
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 
+.cover-title h1 {
+	letter-spacing: 1px;
+	color: white;
+	font-weight: bold;
+	font-size: 10rem;
+	border-bottom: 1px solid #7f8c8d;
+	padding-bottom: 10px;
+}
+
+.cover-title p {
+	color: white;
+	font-size: 2rem;
+	padding-top: 10px;
+}
+
+.cover-title {
+	height: 550px;
+	width: 100%;
+	margin-top: 200px;
+}
+
+.opinions-list {
+	position: relative;
+}
+
+.opinions {
+	padding: 30px;
+	border-top: 1px solid #7f8c8d;
+}
+
+.stats {
+	color: white;
+}
 
 //new opinions
 .new-opinion-form {
@@ -45,7 +109,7 @@
 }
 
 .new-opinion-container {
-	width: 80%;
+	width: 90%;
 	margin-top: 30px;
 	height: auto;
 	margin-left: auto;
@@ -73,6 +137,6 @@
 	background-color: #2ecc71;
 	position: fixed;
 	right: 0;
-	bottom: 1;
+	bottom: 0 !important;
 	margin: 30px;
 }

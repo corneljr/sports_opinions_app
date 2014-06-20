@@ -1,21 +1,29 @@
-<div class='col-md-8'>
+<div class="cover-image">
+</div>
+<div class='cover-title center'>
+	<h1>Opinions</h1>
+	<p>The place for those short, quick hitting opinions that are itching to get out.</p>
+</div>
+
+<div class='col-md-8 opinions-list'>
 <% @opinions.each do |opinion| %>
-<div class='well'>
-	<p class='vote-count'><%= opinion.upvote_count %>...<%= opinion.downvote_count %></p>
-	<p><%= link_to "#{opinion.title}", opinion_path(opinion), class: 'opinions-titles center' %> by <%= opinion.user.user_name %></p>
-	<p><%= link_to "Comments: #{opinion.comments.size}", opinion_path(opinion) %></p>
+<div class='opinions'>
+	<!-- <p class='vote-count'><%#= opinion.upvote_count %>...<%#= opinion.downvote_count %></p> -->
+	<p><%= link_to "#{opinion.title}", opinion_path(opinion), class: 'opinions-titles center' %>
+		<br><span class='opinions-comments'>by <%= opinion.user.user_name %></span></p>
+	<p><%= link_to "Comments: #{opinion.comments.size}", opinion_path(opinion), class: 'opinions-comments' %></p>
 </div>
 <% end %>
 </div>
 
 <div class='col-md-4'>
-	<h3>Leaderboard</h3>
+	<h3 class='center stats'>Leaderboard</h3>
 	<br>
 	<br>
 	<br>
 	<br>
 	<br>
 	<br>
-	<h3>Trending Topics</h3>
+	<h3 class='center stats'>Trending Topics</h3>
 </div>
 
