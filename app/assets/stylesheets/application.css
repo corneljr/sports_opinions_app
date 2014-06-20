@@ -14,6 +14,17 @@
 
  @import url(http://fonts.googleapis.com/css?family=Raleway);
 
+
+/*footer*/
+
+.footer-white-bg {
+  color: black;
+}
+
+.footer-white-bg:hover {
+  color: #2ecc71;
+  text-decoration: none;
+}
 	/*
 
 

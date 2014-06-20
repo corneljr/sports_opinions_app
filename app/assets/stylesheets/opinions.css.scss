@@ -5,6 +5,18 @@
 
 //all opinions
 
+.new-opinion {
+	font: inherit;
+	border: 0px;
+	padding: 16px;
+	border-radius: 10px;
+}
+
+.trending-title {
+	color: white;
+	font-size: 2rem;
+}
+
 .vote-count {
 	float: left;
 	font-size: 3rem;

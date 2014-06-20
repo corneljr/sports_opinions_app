@@ -1,7 +1,6 @@
 <h1 class="reg_header">Welcome Back</h1>
 
 <div class="center_div">
-	<p class="text-left"><%= link_to "Back", :back %></p>
 	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 	  <div class="reg_label"><%= f.label :email %></div>
 	  <div class="reg_input"><%= f.email_field :email, autofocus: true %></div>
@@ -18,3 +17,4 @@
 </div>
 
 <%= render "devise/shared/links" %>
+<%= render 'layouts/footer_white'%>

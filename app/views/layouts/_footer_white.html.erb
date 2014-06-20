@@ -1,0 +1,12 @@
+<footer class="pull-left">
+	<div class='container'>
+	<p class='text-center'>
+		<% unless current_user %>
+			<%= link_to 'sign in', new_user_session_path%>
+		<% end %>
+		<%= link_to 'about us', about_path, class: 'footer-white-bg'%>
+		<%= link_to 'home', home_path, class: 'footer-white-bg'%>
+		<%= link_to 'articles', articles_path, class: 'footer-white-bg'%>
+		<%= link_to 'opinions', opinions_path, class: 'footer-white-bg'%></p>
+	</div>
+</footer>

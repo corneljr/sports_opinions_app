@@ -1,7 +1,12 @@
 <footer class="pull-left">
 	<div class='container'>
-	<p class='text-center'><%= link_to 'about us', about_path%>
-			<%= link_to 'articles', articles_path%>
-			<%= link_to 'opinions', opinions_path%></p>
+	<p class='text-center'>
+		<% unless current_user %>
+			w<%= link_to 'sign in', new_user_session_path%>
+		<% end %>
+		<%= link_to 'about us', about_path%>
+		<%= link_to 'home', home_path%>
+		<%= link_to 'articles', articles_path%>
+		<%= link_to 'opinions', opinions_path%></p>
 	</div>
 </footer>

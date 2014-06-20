@@ -4,9 +4,14 @@
 <div class='cover-title center'>
 	<h1 style="font-weight: 100;">Opinions</h1>
 	<p>The place for those short, quick hitting opinions that are itching to get out.</p>
+	<br>
+		<%= link_to 'Post an opinion', new_user_registration_path, class: 'new-opinion btn btn-primary btn-large' %>
 </div>
 
 <div class='col-md-8 opinions-list'>
+	<p class='trending-title'>
+		<span class='glyphicon glyphicon-chevron-down'></span>  trending opinions 
+	</p>
 <% @opinions.each do |opinion| %>
 <div class='opinions'>
 	<!-- <p class='vote-count'><%#= opinion.upvote_count %>...<%#= opinion.downvote_count %></p> -->
@@ -18,6 +23,9 @@
 </div>
 
 <div class='col-md-4'>
+	<br>
+	<br>
+	<br>
 	<h3 class='center stats'>Leaderboard</h3>
 	<br>
 	<br>

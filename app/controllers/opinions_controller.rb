@@ -1,4 +1,6 @@
 class OpinionsController < ApplicationController
+	before_filter :authenticate_user!, :except => [:show, :index]
+
 	def index
 		@opinions = Opinion.most_votes
 	end
