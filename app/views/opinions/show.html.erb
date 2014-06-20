@@ -1,27 +1,32 @@
-<%= link_to "Back", opinion_path %>
-<%= @opinion.title %>
-<%= @opinion.body %>
+<%= link_to "Back", opinions_path, class: 'btn btn-large btn-primary opinion-btn back' %>
+
+<span class='vote'><%= render 'layouts/vote' %></span>
+<div class='opinion-container center'>
+<h1 class='opinion-title'><%= @opinion.title %></h1>
+<p class='opinion-body'><%= @opinion.body %></p>
+</div>
 
 <% if user_signed_in? %>
 	<%= form_for @comment do |f| %>
 
-		<%= f.text_field :body %>
+		<%= f.text_field :body, class: 'form-control submit-comment'%>
 
 		<%= f.hidden_field :user_id, :value => current_user.id %>
 		<%= f.hidden_field :opinion_id, :value => @opinion.id %>
 
-		<%= f.submit 'Post' %>
+		<%= f.submit 'Post', class: 'btn btn-primary opinion-btn post' %>
 
 	<% end %>
 	<% else %>
-	<p>You must <%= link_to 'sign in', new_user_registration_path %> to comment </p>
+	<p class='center'>You must <%= link_to 'sign in', new_user_session_path %> to comment </p>
 <% end %>
 
 <% unless @comments.empty? %>
-<% @comments.each do |comment| %>
-	<%= comment.user.user_name %>
-	<%= comment.body  %>
-	<% end %>
+	<% @comments.each do |comment| %>
+		<p class='well'>
+			<%= comment.user.user_name %>: 
+			<%= comment.body %></p>
+		<% end %>
 <% end %>
 
 <% if user_signed_in? %>

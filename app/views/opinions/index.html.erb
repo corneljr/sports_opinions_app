@@ -1,3 +1,5 @@
+<%= render 'layouts/header'  %>
+
 <div class="cover-image">
 	<div class="cover-image blurred-img"></div>
 </div>
@@ -16,7 +18,7 @@
 <div class='opinions'>
 	<!-- <p class='vote-count'><%#= opinion.upvote_count %>...<%#= opinion.downvote_count %></p> -->
 	<p><%= link_to "#{opinion.title}", opinion_path(opinion), class: 'opinions-titles center' %>
-		<br><span class='opinions-comments'>by <%= opinion.user.user_name %></span></p>
+		<br><span class='opinion-user'>by <%= opinion.user.user_name %></span></p>
 	<p><%= link_to "Comments: #{opinion.comments.size}", opinion_path(opinion), class: 'opinions-comments' %></p>
 </div>
 <% end %>

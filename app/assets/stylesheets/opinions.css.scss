@@ -2,6 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//show opinion
+.opinion-container {
+
+}
+
+.opinion-title {
+	font-size: 4rem;
+}
+
+.opinion-body {
+	font-size: 2rem;
+	border-bottom: 1px solid rgba(189, 195, 199,0.5);
+	border-top: 1px solid rgba(189, 195, 199,0.5);
+}
+
+.opinion-btn {
+	padding: 8px 13px;
+	border: 0px;
+	color: black;
+	display: inline-block;
+}
+
+.vote {
+	float: right;
+	margin-top: 10px;
+}
+
+.back {
+	margin-top: 10px;
+}
+
+.well {
+	background-color: rgba(46, 204, 113,0.2);
+	border: 0px;
+	padding: 10px;
+	width: 90%;
+	margin: 5px;
+	margin-left: 0px;
+}
+
+.submit-comment {
+	display: inline-block;
+	outline-color: rgba(46, 204, 113,1);
+	width: 90%;
+}
 
 //all opinions
 
@@ -39,7 +84,18 @@
 
 .opinions-comments {
 	font-size: 2rem;
+	color: white;
 	text-decoration: none;
+}
+
+.opinions-comments:hover {
+	text-decoration: none;
+	color: white;
+	color: #2ecc71;
+}
+
+.opinion-user {
+	font-size: 2rem;
 	color: white;
 }
 
@@ -95,7 +151,7 @@
 	position: relative;
 	width: 70%;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: auto;	
 }
 
 .opinions {
