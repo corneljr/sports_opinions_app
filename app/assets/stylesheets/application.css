@@ -89,7 +89,7 @@ Registration
     }
 
     .reg_input input {
-      width: 115%;
+      width: 100%;
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #bdc3c7;

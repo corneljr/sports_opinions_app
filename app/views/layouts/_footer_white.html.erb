@@ -1,8 +1,8 @@
 <footer class="pull-left">
 	<div class='container'>
 	<p class='text-center'>
-		<% unless current_user %>
-			<%= link_to 'sign in', new_user_session_path%>
+		<% unless user_signed_in? %>
+			<%= link_to 'sign in', new_user_session_path, class: 'footer-white-bg'%>
 		<% end %>
 		<%= link_to 'about us', about_path, class: 'footer-white-bg'%>
 		<%= link_to 'home', home_path, class: 'footer-white-bg'%>
