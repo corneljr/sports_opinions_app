@@ -9,7 +9,11 @@ class OpinionsController < ApplicationController
 
 	def create
 		@opinion = Opinion.create(opinion_params)
-		redirect_to opinion_path(@opinion.id)
+		if @opinion.save
+			redirect_to opinion_path(@opinion.id)
+		else
+			render :new
+		end
 	end
 
 	def show
@@ -19,8 +23,8 @@ class OpinionsController < ApplicationController
 	end
 
 	def vote
-		if params[:polarity] == true || params[:polarity] = false
-			Vote.create(user_id: current_user.id, polarity: params[:polarity], article_id: params[:id])
+		if params[:polarity] == 'true' || params[:polarity] = 'false'
+			@vote = Vote.create(user_id: current_user.id, polarity: params[:polarity], opinion_id: params[:id])
 		end
 		redirect_to opinion_path(params[:id])
 	end

@@ -1,3 +1,78 @@
 // Place all the styles related to the opinions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//all opinions
+
+.vote-count {
+	float: left;
+	font-size: 3rem;
+	position: absolute;
+	margin-left: -90px;
+}
+
+.opinions-titles {
+	font-size: 2rem;
+}
+
+.well {
+	padding: 5px;
+}
+
+
+//new opinions
+.new-opinion-form {
+	border: 0px;
+
+}
+
+.new-opinion-text {
+	color: #bdc3c7;
+	border: 0px;
+	resize:none;
+	width: 100%;
+}
+
+
+.text-area:focus {
+	outline-width: 0;
+	color: black;
+}
+
+.new-opinion-button {
+	border: 0px;
+}
+
+.new-opinion-container {
+	width: 80%;
+	margin-top: 30px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-area {
+	width: 100%;
+	height: 550px;
+	margin-top: 20px;
+	font-size: 1.3em;
+}
+
+.text-field:focus {
+	outline-width: 0;
+	color: black;
+}
+
+.text-field {
+	font-size: 3em;
+}
+
+.new-opinion-button {
+	color: white;
+	background-color: #2ecc71;
+	position: fixed;
+	right: 0;
+	bottom: 1;
+	margin: 30px;
+}

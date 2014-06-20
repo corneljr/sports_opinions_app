@@ -1,4 +1,21 @@
+<div class='col-md-8'>
 <% @opinions.each do |opinion| %>
-<%= link_to "#{opinion.title}", opinion_path(opinion) %>
+<div class='well'>
+	<p class='vote-count'><%= opinion.upvote_count %>...<%= opinion.downvote_count %></p>
+	<p><%= link_to "#{opinion.title}", opinion_path(opinion), class: 'opinions-titles center' %> by <%= opinion.user.user_name %></p>
+	<p><%= link_to "Comments: #{opinion.comments.size}", opinion_path(opinion) %></p>
+</div>
 <% end %>
+</div>
+
+<div class='col-md-4'>
+	<h3>Leaderboard</h3>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h3>Trending Topics</h3>
+</div>
 
