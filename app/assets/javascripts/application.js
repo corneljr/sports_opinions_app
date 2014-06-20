@@ -19,7 +19,7 @@
 $(document).ready(function() {
 			$(window).scroll(function(e) {
     			var s = $(window).scrollTop(),
-       	 opacityVal = (s / 300.0);
+       	 opacityVal = (s / 600.0);
 
    	 	$('.blurred-img').css('opacity', opacityVal);
 		});
