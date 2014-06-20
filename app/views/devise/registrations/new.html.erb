@@ -1,6 +1,7 @@
 <h1 class="reg_header">Start your 'app name' experience.</h1>
-<p class="pull-left"><%= link_to "Back", :back %></p>
+
 <div class="center_div">
+  <p class="text-left"><%= link_to "Back", :back %></p>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
