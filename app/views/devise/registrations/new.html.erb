@@ -1,9 +1,13 @@
+
+
 <h1 class="reg_header">Start your 'app name' experience.</h1>
 
 <div class="center_div">
+  <%= devise_error_messages! %>
   <p class="text-left"><%= link_to "Back", :back %></p>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+ 
+
 
   <div class="reg_label"><%= f.label "Username" %></div>
   <div  class="reg_input"><%= f.text_field :user_name, autofocus: true %></div>

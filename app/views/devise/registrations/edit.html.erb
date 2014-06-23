@@ -1,7 +1,7 @@
 <h2 class="reg_header">Edit <%= resource_name.to_s.humanize %></h2>
 
 <div class="center_div">
-<p class="text-left"><%= link_to "Back", :back %></p>
+<p class="text-left"><%= link_to "Back", root_path %></p>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -15,7 +15,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="reg_label"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><</div>
+  <div class="reg_label"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></div>
    <div class="reg_input"> <%= f.password_field :password, autocomplete: "off" %></div>
 
   <div class="reg_label"><%= f.label :password_confirmation %></div>

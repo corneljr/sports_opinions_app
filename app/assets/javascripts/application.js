@@ -23,4 +23,6 @@ $(document).ready(function() {
 
    	 	$('.blurred-img').css('opacity', opacityVal);
 		});
+
+
 });

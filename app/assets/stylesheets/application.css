@@ -116,3 +116,21 @@ Registration
     .remember_me {
       margin-top: 10px;
     }
+
+  /*
+
+
+Error Messages - Devise
+
+
+  */
+
+
+    #error_explanation h2 {
+      color: #2ecc71;
+      font-size: 1.5em;
+    }
+
+    #error_explanation ul {
+      list-style: none;
+    }
