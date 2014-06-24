@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624005313) do
+ActiveRecord::Schema.define(version: 20140624182926) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20140624005313) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "article_id"
-    t.integer  "opinion_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   create_table "opinions", force: true do |t|
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20140624005313) do
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.datetime "remember_created_at"m
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
