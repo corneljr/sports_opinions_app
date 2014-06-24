@@ -1,5 +1,3 @@
-
-
 <a href="<%= opinions_path %>"><span class='
 glyphicon glyphicon-chevron-left'></span></a>
 
@@ -11,14 +9,14 @@ glyphicon glyphicon-chevron-left'></span></a>
 </div>
 
 <p>What do you think?</p>
-	<form action="<%= vote_opinion_path %>" method='post'>
-		<input type="range" name="quality" min="0" max="100">
+	<%= form_for [@opinion, @vote] do |f| %>
+		<p><%= f.range_field :quality, :min=>0, :max=>100, :class=>"slide"%></p>
 		<% if @voted %>
-			<input type="submit" class='btn btn-primary'disabled>
+			<%= f.submit "Vote", disabled: true %>
 		<% else %>
-			<input type="submit" class='btn btn-primary'>
+			<%= f.submit "Vote" %>
 		<% end %>
-	</form>
+	<% end %>
 		
 <div class='opinion-container center'>
 <h1 class='opinion-title'><%= @opinion.title %></h1>

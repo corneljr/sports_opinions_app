@@ -24,6 +24,7 @@ class OpinionsController < ApplicationController
 		@opinion = Opinion.find(params[:id])
 		@comments = @opinion.comments
 		@comment = Comment.new
+		@vote = Vote.new
 		@vote_average = vote_average(@opinion).round
 		@voted = current_user_has_voted?(@opinion) 
 	end

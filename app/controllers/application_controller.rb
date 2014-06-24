@@ -20,7 +20,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_user_has_voted
+  def load_parent
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
+  end
 
   protected
 
