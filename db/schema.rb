@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618214453) do
+ActiveRecord::Schema.define(version: 20140624005313) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 20140618214453) do
     t.integer  "user_id"
     t.integer  "article_id"
     t.integer  "opinion_id"
-    t.boolean  "polarity"
     t.integer  "comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "quality"
   end
 
 end

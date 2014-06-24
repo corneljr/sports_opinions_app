@@ -2,8 +2,8 @@ OpinionsProject::Application.routes.draw do
 
   devise_for :users
   root 'static_pages#index'
-  get '/home' => 'static_pages#home', as: :home
-  get '/about' => 'static_pages#about', as: :about
+  get '/home' => 'white_pages#home', as: :home
+  get '/about' => 'white_pages#about', as: :about
 
   resources :opinions do  
     member do  

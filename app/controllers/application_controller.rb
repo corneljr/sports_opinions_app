@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  # def load_tweets
+  #   @tweets = $client.user_timeline[0..5]
+  # end
+
   protected
 
   def configure_devise_permitted_parameters
