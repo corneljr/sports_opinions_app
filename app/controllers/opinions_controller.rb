@@ -4,7 +4,7 @@ class OpinionsController < ApplicationController
 
 
 	def index
-		@opinions = Opinion.most_votes
+		@opinions = Opinion.all
 	end
 
 	def new
@@ -24,17 +24,13 @@ class OpinionsController < ApplicationController
 		@opinion = Opinion.find(params[:id])
 		@comments = @opinion.comments
 		@comment = Comment.new
+		@vote_average = vote_average(@opinion).round
 	end
 
 	def vote
 		@vote = Vote.create(user_id: current_user.id, quality: params[:quality], opinion_id: params[:id])
 		redirect_to opinion_path(params[:id])
 	end
-
-	def current_user_has_voted?(id)
-		Opinion.find(id).votes.include?(user_id == current_user.id)
-	end
-
 
 	private
 

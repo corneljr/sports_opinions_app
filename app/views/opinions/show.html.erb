@@ -1,21 +1,23 @@
 <a href="<%= opinions_path %>"><span class='
 glyphicon glyphicon-chevron-left'></span></a>
 
-
 <div class='container'>
 <div class="progress progress-striped">
-  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60%
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<%= @vote_average %>%;"> 
+  	<%= @vote_average %>%
   </div>
 </div>
 
 <p>What do you think?</p>
-<% if  %>
 	<form action="<%= vote_opinion_path %>" method='post'>
 		<input type="range" name="quality" min="0" max="100">
-		<input type="submit" class='btn btn-primary'>
+		<% if @opinion.votes.exists?(user_id: current_user.id) %>
+			<input type="submit" class='btn btn-primary'disabled>
+		<% else %>
+			<input type="submit" class='btn btn-primary'disabled>
+		<% end %>
 	</form>
-
-
+		
 <div class='opinion-container center'>
 <h1 class='opinion-title'><%= @opinion.title %></h1>
 <p class='opinion-body'><%= @opinion.body %></p>

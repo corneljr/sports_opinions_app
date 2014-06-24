@@ -3,10 +3,21 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :null_session
 
-
-  # def load_tweets
-  #   @tweets = $client.user_timeline[0..5]
+  # def current_user_has_voted?(object)
+  #   @vote_status = object.votes.exists?(user_id: current_user.id)
   # end
+
+  def vote_average(object)
+    sum = 0
+    object.votes.each do |vote|
+      sum += vote.quality
+    end
+
+    @vote_average = sum / object.votes.count
+  end
+
+  # helper_method :current_user_has_voted
+  helper_method :vote_average
 
   protected
 
