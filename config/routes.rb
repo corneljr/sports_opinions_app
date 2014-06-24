@@ -1,22 +1,19 @@
 OpinionsProject::Application.routes.draw do
 
+  get "votes/create"
   devise_for :users
   root 'static_pages#index'
   get '/home' => 'white_pages#home', as: :home
   get '/about' => 'white_pages#about', as: :about
 
-  resources :opinions do  
-    member do  
-      post 'opinions/:id/vote' => 'opinions#vote', as: :vote
-    end
+  resources :opinions do   
     resources :comments, only: [:create]
+    resources :votes, only: [:create]
   end
 
   resources :articles do
-    member do 
-      post 'articles/:id/vote' => 'articles#vote', as: :vote
-    end
     resources :comments, only: [:create]
+    resources :votes, only: [:create]
   end
 
 

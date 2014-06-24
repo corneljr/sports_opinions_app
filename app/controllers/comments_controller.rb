@@ -14,12 +14,4 @@ class CommentsController < ApplicationController
 		params.require(:comment).permit(:body, :commentable_type, :commentable_id)
 	end
 
-	def load_parent
-		params.each do |name, value|
-			if name =~ /(.+)_id$/
-				return $1.classify.constantize.find(value)
-			end
-		end
-		nil
-	end
 end
