@@ -9,15 +9,15 @@ OpinionsProject::Application.routes.draw do
     member do  
       post 'opinions/:id/vote' => 'opinions#vote', as: :vote
     end
+    resources :comments, only: [:create]
   end
 
   resources :articles do
     member do 
       post 'articles/:id/vote' => 'articles#vote', as: :vote
     end
+    resources :comments, only: [:create]
   end
-
-  resources :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:show, :index]
-	 skip_before_action :verify_authenticity_token, :only => [:vote]
+	skip_before_action :verify_authenticity_token, :only => [:vote]
 
 
 	def index
