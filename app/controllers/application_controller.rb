@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :null_session
 
-  # def current_user_has_voted?(object)
-  #   @vote_status = object.votes.exists?(user_id: current_user.id)
-  # end
+  def current_user_has_voted?(object)
+    object.votes.exists?(user_id: current_user.id)
+  end
 
   def vote_average(object)
     sum = 0
@@ -13,11 +13,14 @@ class ApplicationController < ActionController::Base
       sum += vote.quality
     end
 
-    @vote_average = sum / object.votes.count
+    if object.votes.count > 0
+      @vote_average = sum / object.votes.count 
+    else 
+      @vote_average = 0
+    end
   end
 
-  # helper_method :current_user_has_voted
-  helper_method :vote_average
+  helper_method :current_user_has_voted
 
   protected
 

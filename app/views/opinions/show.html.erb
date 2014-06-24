@@ -1,3 +1,5 @@
+
+
 <a href="<%= opinions_path %>"><span class='
 glyphicon glyphicon-chevron-left'></span></a>
 
@@ -11,10 +13,10 @@ glyphicon glyphicon-chevron-left'></span></a>
 <p>What do you think?</p>
 	<form action="<%= vote_opinion_path %>" method='post'>
 		<input type="range" name="quality" min="0" max="100">
-		<% if @opinion.votes.exists?(user_id: current_user.id) %>
+		<% if @voted %>
 			<input type="submit" class='btn btn-primary'disabled>
 		<% else %>
-			<input type="submit" class='btn btn-primary'disabled>
+			<input type="submit" class='btn btn-primary'>
 		<% end %>
 	</form>
 		

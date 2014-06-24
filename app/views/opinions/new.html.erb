@@ -1,8 +1,17 @@
-<% unless @opinion.errors.empty? %>
-	<% @article.errors.each do |error| %>
-	<%= error.message %>
-	<% end %>
+<% if @opinion.errors.any? %>
+	<div id='error_explanation'>
+		<h3><%= pluralize(@opinion.errors.count, 'error') %> prohibited the post</h3>
+
+		<ul>
+			<% @opinion.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
 <% end %>
+
+
+<a href="<%= opinions_path %>"><span class='
+glyphicon glyphicon-chevron-left'></span></a>
 
 <div class='new-opinion-container'>
 <%= form_for @opinion, {:class => 'new-opinion-form'} do |f| %>

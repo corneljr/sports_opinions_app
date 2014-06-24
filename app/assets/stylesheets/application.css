@@ -25,6 +25,14 @@
   color: #2ecc71;
   text-decoration: none;
 }
+
+/*header*/
+
+.container-nav {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
 	/*
 
 

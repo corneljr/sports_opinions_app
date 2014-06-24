@@ -2,7 +2,8 @@ class Article < ActiveRecord::Base
 	belongs_to :user
 	has_many :votes
 	has_many :comments
-	validate :title, presence: true, length: {
-		minimum: 4, maximmum: 64
-	}
+
+	validates :title, :body, presence: true 
+	validates :body, length: { in: 10..1000 }
+	validates :title, length: { in: 5..50 }
 end

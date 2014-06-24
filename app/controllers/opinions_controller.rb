@@ -25,6 +25,7 @@ class OpinionsController < ApplicationController
 		@comments = @opinion.comments
 		@comment = Comment.new
 		@vote_average = vote_average(@opinion).round
+		@voted = current_user_has_voted?(@opinion) 
 	end
 
 	def vote
