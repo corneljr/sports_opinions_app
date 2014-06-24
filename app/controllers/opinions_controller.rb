@@ -1,5 +1,7 @@
 class OpinionsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:show, :index]
+	 skip_before_action :verify_authenticity_token, :only => [:vote]
+
 
 	def index
 		@opinions = Opinion.most_votes
@@ -25,11 +27,14 @@ class OpinionsController < ApplicationController
 	end
 
 	def vote
-		if params[:polarity] == 'true' || params[:polarity] = 'false'
-			@vote = Vote.create(user_id: current_user.id, polarity: params[:polarity], opinion_id: params[:id])
-		end
+		@vote = Vote.create(user_id: current_user.id, quality: params[:quality], opinion_id: params[:id])
 		redirect_to opinion_path(params[:id])
 	end
+
+	def current_user_has_voted?(id)
+		Opinion.find(id).votes.include?(user_id == current_user.id)
+	end
+
 
 	private
 

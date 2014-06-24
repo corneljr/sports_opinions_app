@@ -3,8 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //show opinion
-.opinion-container {
 
+.glyphicon-chevron-left {
+	font-size: 3rem;
+	color: rgba(46, 204, 113,0.8);
+	margin: 20px;
+	position: absolute;
+}
+
+.progress-striped {
+	margin: 30px;
 }
 
 .opinion-title {
@@ -12,13 +20,14 @@
 }
 
 .opinion-body {
-	font-size: 2rem;
+	font-size: 1.7rem;
 	border-bottom: 1px solid rgba(189, 195, 199,0.5);
 	border-top: 1px solid rgba(189, 195, 199,0.5);
 }
 
 .opinion-btn {
 	padding: 8px 13px;
+	margin: 5px;
 	border: 0px;
 	color: black;
 	display: inline-block;

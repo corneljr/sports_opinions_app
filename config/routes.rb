@@ -7,13 +7,13 @@ OpinionsProject::Application.routes.draw do
 
   resources :opinions do  
     member do  
-      post 'vote/:polarity' => 'opinions#vote', as: :vote
+      post 'opinions/:id/vote' => 'opinions#vote', as: :vote
     end
   end
 
   resources :articles do
     member do 
-      post 'vote/:polarity' => 'articles#vote', as: :vote
+      post 'articles/:id/vote' => 'articles#vote', as: :vote
     end
   end
 
