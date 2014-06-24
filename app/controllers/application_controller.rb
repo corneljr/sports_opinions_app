@@ -20,8 +20,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_user_has_voted
-
   protected
 
   def configure_devise_permitted_parameters
