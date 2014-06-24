@@ -1,7 +1,7 @@
 class Opinion < ActiveRecord::Base
 	belongs_to :user
 	has_many :votes
-	has_many :comments
+	has_many :comments, :as => :commentable
 
 	validates :title, :body, presence: true 
 	validates :body, length: { in: 10..255 }
