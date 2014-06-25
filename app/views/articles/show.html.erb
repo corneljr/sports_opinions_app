@@ -22,20 +22,3 @@
 		<%= comment.body %>
 	<% end %>
 <% end %>
-
-<% if @article.votes.exists?(user_id: current_user.id) %>
-	<button class='btn btn-large' disabled>
-		<%= link_to("Upvote", vote_article_path(@article, 'true'), method: 'post')%>  
-	</button>
-	<button class='btn btn-large' disabled>
-	<%= link_to("Downvote", vote_article_path(@article, 'false'), method: 'post')  %>
-	</button>
-<% else %>
-	<% binding.pry %>
-	<button class='btn btn-large'>
-		<%= link_to("Upvote", vote_article_path(@article, 'true'), method: 'post')%>  
-	</button>
-	<button class='btn btn-large'>
-	<%= link_to("Downvote", vote_article_path(@article, 'false'), method: 'post')  %>
-	</button>
-<% end %>

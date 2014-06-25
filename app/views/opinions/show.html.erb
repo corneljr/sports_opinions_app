@@ -18,25 +18,29 @@ glyphicon glyphicon-chevron-left'></span></a>
 		<% end %>
 	<% end %>
 		
-<div class='opinion-container center'>
-<h1 class='opinion-title'><%= @opinion.title %></h1>
-<p class='opinion-body'><%= @opinion.body %></p>
-</div>
-
-<% if user_signed_in? %>
-	<%= form_for [@opinion, @comment] do |f| %>
-		<%= f.text_field :body, class: 'form-control submit-comment'%>
-		<%= f.submit 'Post', class: 'btn btn-primary opinion-btn post' %>
-	<% end %>
-<% else %>
-	<p class='center'>You must <%= link_to 'sign in', new_user_session_path %> to comment </p>
-<% end %>
-
-<% unless @comments.empty? %>
-	<% @comments.each do |comment| %>
-		<p class='well'>
-			<%= comment.user.user_name %>: 
-			<%= comment.body %></p>
+<div class='panel panel-default'>
+	<div class='panel-heading'>
+		<h1 class='opinion-title'><%= @opinion.title %></h1>
+	</div>
+	<div class='panel-body'> 
+		<p class='opinion-body'><%= @opinion.body %></p>
+	</div>
+	<div class='panel-footer'>
+		<% if user_signed_in? %>
+			<%= form_for [@opinion, @comment] do |f| %>
+				<%= f.text_field :body, class: 'form-control submit-comment'%>
+				<%= f.submit 'Post', class: 'btn btn-primary opinion-btn post' %>
+			<% end %>
+		<% else %>
+			<p class='center'>You must <%= link_to 'sign in', new_user_session_path %> to comment </p>
 		<% end %>
-<% end %>
+		<% unless @comments.empty? %>
+			<% @comments.each do |comment| %>
+				<p class='well'>
+					<%= comment.user.user_name %>: 
+					<%= comment.body %>
+				</p>
+			<% end %>
+		<% end %>
+	</div>
 </div>
