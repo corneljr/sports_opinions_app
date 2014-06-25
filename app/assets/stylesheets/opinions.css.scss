@@ -16,21 +16,22 @@
 }
 
 .opinion-title {
-	font-size: 4rem;
+	font-size: 3rem;
 	text-align: center;
+	font-family: 'Raleway', Helvetica;
+	margin-bottom: 0px;
+	padding: 10px;
 }
 
 .opinion-body {
-	font-size: 1.7rem;
+	font-size: 1.9rem;
 	text-align: center;
-=======
 	font-size: 2em;
+	font-family: 'Raleway', Helvetica;
 }
 
 .opinion-body {
 	font-size: 1.2rem;
-	border-bottom: 1px solid rgba(189, 195, 199,0.5);
-	border-top: 1px solid rgba(189, 195, 199,0.5);
 }
 
 .opinion-btn {
