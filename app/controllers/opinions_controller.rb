@@ -4,7 +4,7 @@ class OpinionsController < ApplicationController
 
 
 	def index
-		@opinions = Opinion.all
+		@opinions = Opinion.all.sort_by
 	end
 
 	def new

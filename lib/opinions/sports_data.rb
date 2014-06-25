@@ -4,17 +4,23 @@ module Opinions
 	class SportsData
 
 		def self.get_data
-			doc = Nokogiri::XML(open("https://api.sportsdatallc.org/soccer-t2/wc/matches/2014/6/24/schedule.xml?api_key=ubj3mvka769cbvqwmy7sevqb"))
-			matches = doc.css("matches")
+			doc = Nokogiri::XML(open("https://api.sportsdatallc.org/mlb-t4/daily/boxscore/2014/06/24.xml?api_key=bcm7cg36x8afwvj5v2ufnx6n"))
 			data = []
-			matches.each do |match|
-				my_match = {}
-				# do something and populate my hash
-				my_match[:home] = match
-				data << my_match
+			day = {}
+			visitors = {}
+			home = {}
+			id = 1
+			doc.css('boxscore/visitor').each do |visitor|
+				visitors[id] = [visitor['name'], visitor['runs']]
+				id += 1
 			end
-			return data
+			id = 1
+			doc.css('boxscore/home').each do |home|
+				home[id] = [home['name'], visitor['runs']]
+				id += 1
+			end
+			day[Time.now.getutc.to_s] = [visitors, home]
 		end
-
 	end
 end
+
