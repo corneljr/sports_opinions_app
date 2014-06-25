@@ -1,0 +1,19 @@
+<button class="uk-button-large" data-uk-offcanvas="{target:'#my-id'}"><span class="glyphicon glyphicon-th-list"></span> Menu</button>
+
+		<!-- This is the off-canvas sidebar -->
+		<div id="my-id" class="uk-offcanvas">
+		    <div class="uk-offcanvas-bar">
+		        <ul class="uk-nav uk-nav-offcanvas uk-text-right" data-uk-nav>
+		        	<li><%= link_to "home", root_path  %></li>		        	
+		        	<li><%= link_to "articles", articles_path %></li>
+		        	<li><%= link_to "opinions", opinions_path %></li>
+
+		        	<% unless user_signed_in? %>
+							<li><%= link_to 'sign in', new_user_session_path %></li>
+							<% else %>
+							<li><%= link_to 'edit profile', edit_user_registration_path %></li>
+							<li><%= link_to 'sign out', destroy_user_session_path, method: :delete%></li>
+							<% end %>
+		        </ul>
+		    </div>
+		</div>

@@ -16,11 +16,11 @@
 }
 
 .opinion-title {
-	font-size: 4rem;
+	font-size: 2em;
 }
 
 .opinion-body {
-	font-size: 1.7rem;
+	font-size: 1.2rem;
 	border-bottom: 1px solid rgba(189, 195, 199,0.5);
 	border-top: 1px solid rgba(189, 195, 199,0.5);
 }
@@ -69,6 +69,7 @@
 .trending-title {
 	color: white;
 	font-size: 2rem;
+	font-weight: 100;
 }
 
 .vote-count {
@@ -79,7 +80,7 @@
 }
 
 .opinions-titles {
-	font-size: 3rem;
+	font-size: 2rem;
 	text-decoration: none;
 	color: white;
 	border-top: 5px white;
@@ -139,9 +140,9 @@
 	letter-spacing: 1px;
 	color: white;
 	font-weight: bold;
-	font-size: 10rem;
+	font-size: 6rem;
 	border-bottom: 1px solid #7f8c8d;
-	padding-bottom: 10px;
+	padding-bottom: 50px;
 }
 
 .cover-title p {
